@@ -3,20 +3,23 @@
 
 <head>
 	<title>Thermostat</title>
+	<link rel="stylesheet" href="src/Thermostat.css" />
 </head>
 
 <body>
 	<section class='display'>
-		<h1 id='temperature'></h1>
-		<h1>Powersave mode is <span id='powersave'>on</span></h1>
+		<h1 id='temperature'> 20 </h1>
+		<h1>Powersave mode is <span id='powersave'> ON </span></h1>
 	</section>
 	<section class='controls'>
-		<button id='temperature-up'>UP</button>
-		<button id='temperature-down'>DOWN</buton>
+		<button id='temp-up'>UP</button>
+		<button id='temp-down'>DOWN</buton>
 		<button id='powersaving-button'>SWITCH POWERSAVE</button>
 		<button id='temperature-reset'>RESET</button>
 	</section>
-	<script type='text/javascript' src='/src/Thermostat.js'></script>
+	<script src="jquery.js"></script>
+	<script type='text/javascript' src='./src/Thermostat.js'></script>
+	<script src='./src/Interface.js'></script>
 </body>
 
 </html>
