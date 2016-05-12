@@ -33,6 +33,29 @@ describe('Thermostat', function() {
   expect(function(){thermostat.upButton(6)}).toThrowError('Power saving mode is on, it cannot go above 25');
   expect(thermostat.temperature).toEqual(25);
 });
+  it('when powersaving mode is off the max temperature is 32', function(){
+    thermostat.powerSaveSwitch()
+    thermostat.upButton(15)
+    expect(thermostat.temperature).toEqual(32);
+  });
 
+  it('can reset the temperature to 20 by pressing rest', function(){
+    thermostat.upButton(5)
+    thermostat.reset()
+    expect(thermostat.temperature).toEqual(20);
+  });
+
+  it('should show low energy usage on less than 18 degrees', function(){
+    thermostat.downButton(5)
+    expect(thermostat.displayStatus()).toEqual('Low energy usage')
+  });
+  it('should show medium energy usage on less than 25 degrees', function(){
+    expect(thermostat.displayStatus()).toEqual('Medium energy usage')
+  });
+  it('should show high energy usage on more than 24 degrees', function(){
+    thermostat.powerSaveSwitch()
+    thermostat.upButton(6)
+    expect(thermostat.displayStatus()).toEqual('High energy usage')
+  });
 
 });
