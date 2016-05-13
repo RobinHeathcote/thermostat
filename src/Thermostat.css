@@ -61,11 +61,11 @@
 
 
 div {
-  background: #466368;
-  background: -webkit-linear-gradient(#648880, #293f50);
+  /* background: #466368; */
+  /* background: -webkit-linear-gradient(#648880, #293f50); */
   background:    -moz-linear-gradient(#648880, #293f50);
-  background:         linear-gradient(#648880, #293f50);
+  background: linear-gradient(#64887D, #293F3C);
   text-align: center;
   font-family: "Helvetica Neue", Helvetica;
-  font-weight: 100;
+  font-weight: lighter;
 }
